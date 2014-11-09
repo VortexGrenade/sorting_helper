@@ -1,4 +1,4 @@
-# SortingHelper
+# SortingHelper [![Build Status](https://travis-ci.org/VortexGrenade/sorting_helper.svg?branch=master)](https://travis-ci.org/VortexGrenade/sorting_helper)
 
 Rails helpers for building "sort by column" links.
 
