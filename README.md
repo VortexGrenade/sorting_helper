@@ -1,6 +1,6 @@
 # SortingHelper
 
-TODO: Write a gem description
+Rails helpers for building "sort by column" links.
 
 ## Installation
 
@@ -20,15 +20,40 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+# app/controllers/users_controller.rb
+def index
+  @users = User.order(sorting)
+end
 
-## Contributing
+...
 
-1. Fork it ( https://github.com/[my-github-username]/sorting_helper/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+protected
+
+  def sorting
+    column = sorting_column
+
+    if %w[email name].include?(column)
+      "#{column} #{sorting_direction}"
+    end
+  end
+```
+
+Example view:
+```html
+<table>
+  <tr>
+    <th><%= sorting_link :email, 'Email' %></th>
+    <th><%= sorting_link :name, 'Name' %></th>
+  </tr>
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.email %></td>
+      <td><%= user.name %></td>
+    </tr>
+  <% end %>
+</table>
+```
 
 ## License
 
