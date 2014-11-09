@@ -22,33 +22,33 @@ Or install it yourself as:
 
 ```ruby
 # app/controllers/users_controller.rb
-def index
-  @users = User.order(sorting)
-end
+class UsersController < ApplicationController
+  def index
+    @users = User.order(sorting)
+  end
 
-...
-
-protected
+  protected
 
   def sorting
     column = sorting_column
 
-    if %w[email name].include?(column)
+    if %w[rating name].include?(column)
       "#{column} #{sorting_direction}"
     end
   end
+end
 ```
 
 Example view:
 ```html
 <table>
   <tr>
-    <th><%= sorting_link :email, 'Email' %></th>
+    <th><%= sorting_link :rating, 'Rating' %></th>
     <th><%= sorting_link :name, 'Name' %></th>
   </tr>
   <% @users.each do |user| %>
     <tr>
-      <td><%= user.email %></td>
+      <td><%= user.rating %></td>
       <td><%= user.name %></td>
     </tr>
   <% end %>
