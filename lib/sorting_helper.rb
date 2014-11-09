@@ -1,3 +1,5 @@
+# coding: utf-8
+
 require 'sorting_helper/version'
 require 'active_support/all'
 
