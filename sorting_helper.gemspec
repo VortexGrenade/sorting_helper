@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = SortingHelper::VERSION
   spec.authors       = ["Okhlopkov Anatoly"]
   spec.email         = ["ohlopkov0211@gmail.com"]
-  spec.summary       = ''
-  spec.description   = ''
+  spec.summary       = 'Rails helpers for building "sort by column" links.'
+  spec.description   = 'Rails helpers for building "sort by column" links.'
   spec.homepage      = 'https://github.com/VortexGrenade/sorting_helper'
   spec.license       = "MIT"
 
